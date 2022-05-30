@@ -1988,7 +1988,8 @@ inline int StrCaseCmp(const char* s1, const char* s2) {
   return stricmp(s1, s2);
 }
 #else  // !__BORLANDC__
-#if GTEST_OS_WINDOWS_MOBILE
+#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_ZOS || GTEST_OS_IOS || \
+    GTEST_OS_WINDOWS_PHONE || GTEST_OS_WINDOWS_RT || defined(ESP_PLATFORM)
 #define GTEST_DOISATTY_ 1
 inline int DoIsATTY(int /* fd */) { return 0; }
 #else
