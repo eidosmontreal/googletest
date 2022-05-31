@@ -374,6 +374,8 @@ GTEST_DEFINE_string_(
 namespace testing {
 namespace internal {
 
+const uint32_t Random::kMaxRange;
+
 // Generates a random number from [0, range), using a Linear
 // Congruential Generator (LCG).  Crashes if 'range' is 0 or greater
 // than kMaxRange.
